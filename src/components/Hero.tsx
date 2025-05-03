@@ -45,6 +45,16 @@ const Hero: React.FC = () => {
       </header>
       
       <section className="hero-section">
+        {/* Background image */}
+        <div className="hero-background">
+          <img 
+            src="https://i.imgur.com/193j6jD.png" 
+            alt="Duas silhuetas caminhando por corredor futurista com ecrãs verticais roxos"
+            className="hero-bg-image"
+          />
+          <div className="hero-overlay"></div>
+        </div>
+        
         <div className="container">
           <div className="hero-content">
             <div className="hero-symbol">א</div>

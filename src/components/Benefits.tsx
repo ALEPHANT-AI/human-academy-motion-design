@@ -100,6 +100,16 @@ const Benefits: React.FC = () => {
       <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-[80px]"></div>
       <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px]"></div>
       
+      {/* Futuristic visual */}
+      <div className="absolute right-0 top-0 h-full w-1/3 opacity-30 hidden lg:block">
+        <img 
+          src="https://i.imgur.com/jBWV9DO.png"
+          alt="Perfil com padrão na pele olhando para parede de luz/dados digitais roxos"
+          className="h-full object-cover object-left"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A14] via-[#0A0A14]/80 to-transparent"></div>
+      </div>
+      
       <div className="container relative z-10">
         <h2 className="section-title text-center mb-16 text-[42px] md:text-[56px] leading-tight font-black tracking-tight">
           O que você vai <span className="gradient-text bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 bg-[length:200%_100%]">descobrir e dominar</span>

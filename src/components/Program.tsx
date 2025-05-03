@@ -74,7 +74,8 @@ const Program: React.FC = () => {
       number: "01",
       title: "DIA 1 — DESPERTAR",
       description: "Da sobrevivência à estratégia consciente",
-      image: "https://images.unsplash.com/photo-1553613600-cd485734f024?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.imgur.com/0a5Zrmo.png",
+      alt: "Perfil com pontos luminosos projetados na pele, contra fundo com luzes verticais roxas/azuis",
       topics: [
         "09:00 — Abertura: 'O Chamado do Fundador do Futuro'",
         "09:30 — Diagnóstico de Identidade: Fundador vs Executor - Onde você está?",
@@ -89,7 +90,8 @@ const Program: React.FC = () => {
       number: "02",
       title: "DIA 2 — ASCENSÃO",
       description: "Construindo negócios vivos e inteligentes para o futuro",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.imgur.com/UPL9qI6.png",
+      alt: "Silhueta em corredor moderno minimalista com iluminação roxa e chão refletor",
       topics: [
         "09:00 — Abertura: 'O Fundador como Sistema Operacional da Empresa'",
         "09:30 — Workshop: Arquitetura de Negócios Vivos (DNA + IA + Estratégia)",
@@ -135,15 +137,13 @@ const Program: React.FC = () => {
                   </ul>
                 </div>
                 
-                <div className="relative h-full">
-                  <div className="aspect-video h-full w-full overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-transparent z-10"></div>
-                    <img 
-                      src={item.image} 
-                      alt={item.title} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                <div className="relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tl from-[rgba(5,5,16,0.7)] via-transparent to-transparent z-10"></div>
+                  <img 
+                    src={item.image} 
+                    alt={item.alt || item.title}
+                    className="w-full h-full object-cover min-h-[300px]"
+                  />
                 </div>
               </div>
             </div>
