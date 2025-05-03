@@ -10,6 +10,13 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        format: 'iife'  // Usar IIFE em vez de ESM para evitar problemas de MIME type
+      }
+    }
+  },
   plugins: [
     react(),
     mode === 'development' &&
