@@ -1,25 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/human-academy-motion-design/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>human-academy-motion-design</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="human-academy-motion-design" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta name="theme-color" content="#050510" />
+    <meta name="description" content="FOUNDER UPGRADE™ - Atualize sua mente. Atualize seus negócios. Construa o futuro." />
+    <meta property="og:title" content="FOUNDER UPGRADE™ by ALEPHANT" />
+    <meta property="og:description" content="Atualize sua mente. Atualize seus negócios. Construa o futuro. Imersão presencial 07-08 de Julho em Florianópolis." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://founder-upgrade.alephant.ai" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <!-- Public path fix -->
-    <script type="module" crossorigin src="/human-academy-motion-design/assets/index-D1C1thCK.js"></script>
+    
+    <title>FOUNDER UPGRADE™ by ALEPHANT</title>
+    
+    <!-- Tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Fallback font */
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      
+      /* Melhoria para carregamento de página */
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #050510 0%, #1A0538 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+      
+      .preloader.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+      
+      .loader {
+        position: relative;
+        width: 60px;
+        height: 60px;
+      }
+      
+      .loader:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #BD10A6 0%, #2A65E8 100%);
+        animation: pulse 1.5s ease-out infinite;
+      }
+      
+      .loader:after {
+        content: 'א';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: #FAFAFF;
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(0.85);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(0.85);
+          opacity: 1;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/human-academy-motion-design/assets/index-Bdbim6za.js"></script>
   </head>
-
   <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader"></div>
+    </div>
+    
     <div id="root"></div>
+    
+    <script>
+      // Remover preloader após carregamento
+      window.addEventListener('load', function() {
+        document.querySelector('.preloader').classList.add('hide');
+        setTimeout(function() {
+          document.querySelector('.preloader').style.display = 'none';
+        }, 500);
+      });
+    </script>
   </body>
 </html>
