@@ -1,5 +1,7 @@
 
 import React, { useEffect } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Benefits from '../components/Benefits';
@@ -13,37 +15,33 @@ import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+
 const Index = () => {
   useEffect(() => {
-    // Load and initialize GSAP for animations
-    const loadGSAP = async () => {
-      try {
-        const gsapModule = await import('gsap');
-        const ScrollTriggerModule = await import('gsap/ScrollTrigger');
-        
-        gsapModule.default.registerPlugin(ScrollTriggerModule.default);
-        
-        // Initialize scroll-based animations
-        const fadeElements = document.querySelectorAll('.fade-item');
-        
-        fadeElements.forEach(element => {
-          ScrollTriggerModule.default.create({
-            trigger: element,
-            start: 'top 85%',
-            onEnter: () => element.classList.add('visible'),
-            once: true
-          });
-        });
-      } catch (error) {
-        console.error('Error loading GSAP:', error);
-      }
-    };
+    // Enable smooth scrolling for better experience
+    gsap.config({
+      nullTargetWarn: false, 
+    });
+
+    // Prevent scroll jank during page load
+    document.body.style.opacity = '0';
+    gsap.to(document.body, { 
+      opacity: 1, 
+      duration: 0.6, 
+      ease: 'power2.out'
+    });
     
-    loadGSAP();
+    // Clean up
+    return () => {
+      // Kill all ScrollTrigger instances to prevent memory leaks
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
   
   return (
-    <div className="bg-human-dark text-white">
+    <div className="bg-human-dark text-white overflow-x-hidden">
       <CustomCursor />
       <Header />
       <Hero />

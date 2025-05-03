@@ -1,36 +1,41 @@
 
 import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Project: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const elements = entry.target.querySelectorAll('.fade-item');
-            elements.forEach((el, index) => {
-              setTimeout(() => {
-                (el as HTMLElement).classList.add('visible');
-              }, index * 150);
-            });
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
+    if (!sectionRef.current) return;
     
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const projectCards = sectionRef.current.querySelectorAll('.project-card');
+    
+    projectCards.forEach((card, index) => {
+      gsap.fromTo(card, 
+        { 
+          opacity: 0,
+          y: 50
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: 'top bottom-=100',
+            end: 'bottom center',
+            toggleActions: 'play none none reverse',
+          }
+        }
+      );
+    });
     
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
   
@@ -56,35 +61,35 @@ const Project: React.FC = () => {
   ];
   
   return (
-    <section ref={sectionRef} id="project" className="py-24 bg-gradient-to-b from-human-dark to-black/50">
+    <section ref={sectionRef} id="project" className="py-24 bg-[#0F0F19]">
       <div className="container">
-        <h2 className="section-title text-center fade-item">
+        <h2 className="section-title text-center fade-item text-[42px] md:text-[56px] leading-tight mb-4">
           Projetos <span className="gradient-text">Completos</span>
         </h2>
-        <p className="section-subtitle text-center mx-auto fade-item">
+        <p className="section-subtitle text-center mx-auto fade-item max-w-3xl">
           Durante o workshop, você desenvolverá projetos do zero até deployments
           completos, prontos para seu portfólio profissional
         </p>
         
-        <div className="space-y-16 mt-16">
+        <div className="space-y-24 mt-24">
           {projectSteps.map((step, index) => (
-            <div key={index} className="fade-item">
-              <div className={`grid md:grid-cols-2 gap-8 items-center ${index % 2 !== 0 ? 'md:grid-flow-dense' : ''}`}>
-                <div className={`order-2 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
-                  <div className="relative group overflow-hidden rounded-lg">
+            <div key={index} className="project-card">
+              <div className={`grid md:grid-cols-2 gap-8 items-center bg-[#111122]/40 rounded-2xl overflow-hidden backdrop-blur-sm ${index % 2 !== 0 ? 'md:grid-flow-dense' : ''}`}>
+                <div className={`p-8 md:p-10 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
+                  <span className="text-6xl font-black text-human-orange/20">{step.number}</span>
+                  <h3 className="text-2xl md:text-3xl font-bold mt-2 mb-4">{step.title}</h3>
+                  <p className="text-human-gray">{step.description}</p>
+                </div>
+                
+                <div className={`${index % 2 !== 0 ? 'md:order-2' : 'md:order-1'}`}>
+                  <div className="relative group overflow-hidden h-full">
                     <div className="absolute inset-0 bg-gradient-to-t from-human-dark via-transparent to-transparent z-10"></div>
                     <img 
                       src={step.image} 
                       alt={step.title}
-                      className="w-full transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                </div>
-                
-                <div className={`order-1 ${index % 2 !== 0 ? 'md:order-2' : 'md:order-1'}`}>
-                  <span className="text-6xl font-black text-human-orange/20">{step.number}</span>
-                  <h3 className="text-2xl font-bold mt-2 mb-4">{step.title}</h3>
-                  <p className="text-human-gray">{step.description}</p>
                 </div>
               </div>
             </div>

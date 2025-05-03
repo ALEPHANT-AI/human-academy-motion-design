@@ -1,36 +1,55 @@
 
 import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Benefits: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const elements = entry.target.querySelectorAll('.fade-item');
-            elements.forEach((el, index) => {
-              setTimeout(() => {
-                (el as HTMLElement).classList.add('visible');
-              }, index * 150);
-            });
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
+    if (!sectionRef.current) return;
     
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const benefitCards = sectionRef.current.querySelectorAll('.benefit-card');
+    const title = sectionRef.current.querySelector('.section-title');
+    
+    gsap.from(title, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: title,
+        start: 'top bottom-=100',
+        end: 'bottom center',
+        toggleActions: 'play none none reverse',
+      }
+    });
+    
+    benefitCards.forEach((card, index) => {
+      gsap.fromTo(card, 
+        { 
+          opacity: 0,
+          y: 50
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          delay: index * 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top bottom-=100',
+            end: 'center center',
+            toggleActions: 'play none none reverse',
+          }
+        }
+      );
+    });
     
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
   
@@ -54,9 +73,9 @@ const Benefits: React.FC = () => {
   ];
   
   return (
-    <section ref={sectionRef} id="benefits" className="py-24">
+    <section ref={sectionRef} id="benefits" className="py-24 bg-[#0F0F19]/95">
       <div className="container">
-        <h2 className="section-title text-center fade-item mb-16">
+        <h2 className="section-title text-center mb-16 text-[42px] md:text-[56px] leading-tight">
           Acelerador para sua carreira em <span className="gradient-text">interfaces modernas</span>
         </h2>
         
@@ -64,7 +83,7 @@ const Benefits: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className="fade-item card card-hover p-8 flex flex-col items-start"
+              className="benefit-card p-8 flex flex-col items-start bg-[#111122]/40 rounded-2xl backdrop-blur-sm hover:shadow-lg hover:shadow-human-orange/10 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="h-12 w-12 rounded-full bg-gradient-to-br from-human-orange to-human-orange-light flex items-center justify-center mb-6">
                 <span className="text-xl font-bold">{index + 1}</span>

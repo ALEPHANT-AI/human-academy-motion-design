@@ -34,14 +34,16 @@ const Program: React.FC = () => {
         start: "top top",
         end: "+=300%",
         pin: true,
-        scrub: true,
+        scrub: 0.5,
+        anticipatePin: 1,
+        markers: false,
       }
     });
     
     // Animate heading
     timeline.to(headingRef.current, {
-      yPercent: -50,
-      opacity: 0.6,
+      yPercent: -30,
+      opacity: 0.8,
       scale: 0.9,
       duration: 1
     }, 0);
@@ -52,7 +54,7 @@ const Program: React.FC = () => {
       
       timeline.to(cards[index - 1], {
         autoAlpha: 0,
-        yPercent: -50,
+        yPercent: -30,
         duration: 1
       }, index);
       
@@ -108,9 +110,9 @@ const Program: React.FC = () => {
   ];
   
   return (
-    <section ref={sectionRef} id="program" className="program-section min-h-screen">
+    <section ref={sectionRef} id="program" className="program-section min-h-screen bg-[#0F0F19]/95">
       <div className="container pt-20 pb-10">
-        <h2 ref={headingRef} className="section-title text-center max-w-4xl mx-auto">
+        <h2 ref={headingRef} className="section-title text-center max-w-4xl mx-auto text-[42px] md:text-[56px] leading-tight">
           O que você vai <span className="gradient-text">aprender</span>
         </h2>
         
@@ -120,11 +122,11 @@ const Program: React.FC = () => {
               key={index}
               className="program-card absolute top-0 left-0 w-full"
             >
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="p-6">
+              <div className="grid md:grid-cols-2 gap-8 items-center bg-[#111122]/40 rounded-2xl overflow-hidden backdrop-blur-sm">
+                <div className="p-8 md:p-10">
                   <div className="flex items-center mb-6">
                     <span className="text-5xl font-bold text-human-orange/30 mr-4">{item.number}</span>
-                    <h3 className="text-2xl font-bold">{item.title}</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold">{item.title}</h3>
                   </div>
                   
                   <p className="text-human-gray mb-8">{item.description}</p>
@@ -139,8 +141,8 @@ const Program: React.FC = () => {
                   </ul>
                 </div>
                 
-                <div className="relative">
-                  <div className="aspect-video rounded-lg overflow-hidden">
+                <div className="relative h-full">
+                  <div className="aspect-video h-full w-full overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-human-orange/20 to-transparent z-10"></div>
                     <img 
                       src={item.image} 
