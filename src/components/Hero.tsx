@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             <span className="logo-icon"></span>ALEPHANT
           </div>
           <div className="event-info">
-            <span className="event-date">07—08 Julho • Florianópolis</span>
+            <span className="event-date">07-08 Julho • Florianópolis</span>
           </div>
           <nav className="main-nav">
             <ul>
@@ -61,18 +61,25 @@ const Hero: React.FC = () => {
             <div className="main-tagline">FOUNDER UPGRADE™</div>
             <h1 className="main-title">Empresas do futuro serão extensões precisas do seu fundador.</h1>
             
-            <div className="hero-quote">
-              Menos esforço.<br />Mais inteligência.<br />Negócios únicos e vivos.
-            </div>
+            <p className="hero-paragraph">
+              Menos esforço. Mais inteligência. Negócios únicos e vivos.
+            </p>
             
-            <div className="hero-cta">
+            <div className="hero-buttons">
               <a href="#register" className="cta-button">Garantir Minha Vaga</a>
               <div className="lot-info">
-                <div className="lot-number">LOTE FUNDADORES • 30% PREENCHIDO</div>
+                <div className="lot-number">LOTE FUNDADORES</div>
                 <div className="lot-progress-container">
                   <div className="lot-progress-bar"></div>
                 </div>
+                <div className="lot-progress-text">30% das vagas preenchidas</div>
               </div>
+            </div>
+          </div>
+          
+          <div className="audience-ticker">
+            <div className="ticker-content" ref={tickerRef}>
+              <p>Fundadores • CEOs • Executivos • Estrategistas • Líderes de Inovação • Creators • Consultores</p>
             </div>
           </div>
           
@@ -92,12 +99,6 @@ const Hero: React.FC = () => {
             <div className="hero-meta-item">
               <div className="meta-label">Investimento</div>
               <div className="meta-value">R$ 1.500,00</div>
-            </div>
-          </div>
-          
-          <div className="audience-ticker">
-            <div className="ticker-content" ref={tickerRef}>
-              <p>Fundadores • CEOs • Executivos • Estrategistas • Líderes de Inovação • Creators • Consultores</p>
             </div>
           </div>
         </div>
