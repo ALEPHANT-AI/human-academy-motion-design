@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -73,38 +72,33 @@ const Program: React.FC = () => {
   const programItems = [
     {
       number: "01",
-      title: "Fundamentos Avançados de GSAP",
-      description: "Aprenda as bases poderosas do GreenSock Animation Platform: tweens, timelines, controle preciso de easing e como estruturar animações complexas para máxima flexibilidade.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+      title: "DIA 1 — DESPERTAR",
+      description: "Da sobrevivência à estratégia consciente",
+      image: "https://images.unsplash.com/photo-1553613600-cd485734f024?auto=format&fit=crop&w=800&q=80",
       topics: [
-        "Aprofundamento em tweens e timelines",
-        "Curvas de easing customizadas",
-        "Animação de SVG avançada",
-        "Técnicas de otimização de performance"
+        "09:00 — Abertura: 'O Chamado do Fundador do Futuro'",
+        "09:30 — Diagnóstico de Identidade: Fundador vs Executor - Onde você está?",
+        "10:30 — Workshop DNA: O Modelo Mental da Nova Era dos Negócios",
+        "12:00 — Intervalo Premium (Coffee + Networking Estratégico)",
+        "13:00 — IA Avançada na Prática: Texto, Imagem e Vídeo para Founders",
+        "15:00 — Laboratório: LLMs e Ferramentas Emergentes para Negócios",
+        "17:00 — Encerramento: Reflexão e Reimaginação do seu Propósito"
       ]
     },
     {
       number: "02",
-      title: "Domínio de ScrollTrigger",
-      description: "Transforme o scroll em uma ferramenta de narrativa visual com animações sincronizadas, parallax, efeitos de pin e espaço-tempo personalizados.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+      title: "DIA 2 — ASCENSÃO",
+      description: "Construindo negócios vivos e inteligentes para o futuro",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
       topics: [
-        "Criação de scroll horizontais",
-        "Animações baseadas em posição",
-        "Técnicas de pin e scrub avançadas",
-        "Criação de sequências narrativas"
-      ]
-    },
-    {
-      number: "03",
-      title: "Interfaces Cinematográficas",
-      description: "Combine todas as técnicas para criar experiências web verdadeiramente imersivas com transições fluidas e interatividade que responde ao usuário.",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80",
-      topics: [
-        "Transições de página sem reload",
-        "Reveals criativos de conteúdo",
-        "Interatividade com cursor personalizado",
-        "Animações responsivas que escalam"
+        "09:00 — Abertura: 'O Fundador como Sistema Operacional da Empresa'",
+        "09:30 — Workshop: Arquitetura de Negócios Vivos (DNA + IA + Estratégia)",
+        "11:30 — Mapeamento de Tendências: Próximas Ondas de Mercado e Oportunidades",
+        "12:30 — Intervalo Premium (Coffee + Networking Estratégico)",
+        "13:30 — Laboratório de Prototype: Construção do seu Modelo de Negócio do Futuro",
+        "15:00 — Branding & Posicionamento: Comunicando sua Essência ao Mercado",
+        "16:30 — Apresentação: Mentoria Fundação™ – O Próximo Nível",
+        "17:00 — Encerramento: Rito de Compromisso com o Futuro"
       ]
     }
   ];
@@ -113,7 +107,7 @@ const Program: React.FC = () => {
     <section ref={sectionRef} id="program" className="program-section min-h-screen bg-[#0F0F19]/95">
       <div className="container pt-20 pb-10">
         <h2 ref={headingRef} className="section-title text-center max-w-4xl mx-auto text-[42px] md:text-[56px] leading-tight">
-          O que você vai <span className="gradient-text">aprender</span>
+          Estrutura completa do <span className="gradient-text bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500">evento</span>
         </h2>
         
         <div ref={cardsRef} className="relative mt-12 min-h-[500px]">
@@ -125,16 +119,16 @@ const Program: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-8 items-center bg-[#111122]/40 rounded-2xl overflow-hidden backdrop-blur-sm">
                 <div className="p-8 md:p-10">
                   <div className="flex items-center mb-6">
-                    <span className="text-5xl font-bold text-human-orange/30 mr-4">{item.number}</span>
+                    <span className="text-5xl font-bold text-purple-500/30 mr-4">{item.number}</span>
                     <h3 className="text-2xl md:text-3xl font-bold">{item.title}</h3>
                   </div>
                   
-                  <p className="text-human-gray mb-8">{item.description}</p>
+                  <p className="text-human-gray mb-8 text-lg italic">'{item.description}'</p>
                   
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                     {item.topics.map((topic, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-human-orange mr-2">→</span>
+                        <span className="text-purple-400 mr-2">→</span>
                         <span>{topic}</span>
                       </li>
                     ))}
@@ -143,7 +137,7 @@ const Program: React.FC = () => {
                 
                 <div className="relative h-full">
                   <div className="aspect-video h-full w-full overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-human-orange/20 to-transparent z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-transparent z-10"></div>
                     <img 
                       src={item.image} 
                       alt={item.title} 
