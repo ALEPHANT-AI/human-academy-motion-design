@@ -1,0 +1,26 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1440" height="900" fill="#0C0C0C"/>
+<g opacity="0.3">
+<circle cx="700" cy="450" r="450" stroke="url(#paint0_linear_1_2)" stroke-width="1"/>
+<circle cx="700" cy="450" r="350" stroke="url(#paint1_linear_1_2)" stroke-width="1"/>
+<circle cx="700" cy="450" r="250" stroke="url(#paint2_linear_1_2)" stroke-width="1"/>
+</g>
+<g opacity="0.1">
+<line x1="0" y1="450" x2="1440" y2="450" stroke="white" stroke-width="1"/>
+<line x1="700" y1="0" x2="700" y2="900" stroke="white" stroke-width="1"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1_2" x1="250" y1="0" x2="1150" y2="900" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF4500"/>
+<stop offset="1" stop-color="#6B46E5"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1_2" x1="350" y1="100" x2="1050" y2="800" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF4500"/>
+<stop offset="1" stop-color="#6B46E5"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1_2" x1="450" y1="200" x2="950" y2="700" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF4500"/>
+<stop offset="1" stop-color="#6B46E5"/>
+</linearGradient>
+</defs>
+</svg>
