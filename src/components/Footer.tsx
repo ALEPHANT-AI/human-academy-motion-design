@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Footer: React.FC = () => {
@@ -8,7 +7,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <a href="#" className="text-white text-2xl font-bold mb-4 block">
-              HUMAN<span className="text-human-orange">Academy</span>
+              ALEPHANT<span className="text-human-orange"></span>
             </a>
             <p className="text-human-gray">
               Cursos e workshops para elevar suas habilidades criativas e técnicas ao próximo nível.
@@ -28,7 +27,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Contato</h4>
             <ul className="space-y-2">
-              <li><a href="mailto:contato@humanacademy.com.br" className="text-human-gray hover:text-white transition-colors">contato@humanacademy.com.br</a></li>
+              <li><a href="mailto:contato@alephant.ai" className="text-human-gray hover:text-white transition-colors">contato@alephant.ai</a></li>
               <li><span className="text-human-gray">+55 11 99999-9999</span></li>
               <li><span className="text-human-gray">São Paulo, SP - Brasil</span></li>
             </ul>
@@ -66,7 +65,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-human-gray text-sm">&copy; 2025 HUMAN Academy. Todos os direitos reservados.</p>
+          <p className="text-[var(--human-gray)] text-sm">&copy; 2025 ALEPHANT. Todos os direitos reservados.</p>
           <div className="mt-4 md:mt-0 flex space-x-6 text-sm text-human-gray">
             <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
             <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>

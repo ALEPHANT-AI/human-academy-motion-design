@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* stylelint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable */
 
 :root {
   /* ALEPHANT - Paleta Transcendental */
@@ -22,11 +24,19 @@
   --accent: var(--luminous-magenta);
   --secondary-accent: var(--transcendental-blue);
   --text: var(--radiant-white);
-  --human-gray: rgba(250, 250, 255, 0.7);
+  --alephant-gray: rgba(250, 250, 255, 0.7);
+  
+  /* Aliases para compatibilidade com o código existente */
+  --human-gray: var(--alephant-gray);
+  --human-orange: var(--luminous-magenta);
+  --human-dark: var(--cosmic-black);
+  --human-orange-light: var(--transcendental-blue);
 }
 
+/* stylelint-disable */
 @layer base {
   body {
+    /* stylelint-disable-line */
     @apply bg-[var(--bg)] text-[var(--text)];
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -37,26 +47,31 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
+    /* stylelint-disable-line */
     @apply font-bold;
     font-family: 'TT Commons Pro', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.03em;
   }
   
   a {
+    /* stylelint-disable-line */
     @apply text-[var(--accent)] hover:text-[var(--secondary-accent)];
     transition: all 0.3s ease;
   }
   
   section {
+    /* stylelint-disable-line */
     @apply py-16 relative;
   }
   
   .container {
+    /* stylelint-disable-line */
     @apply px-4 mx-auto;
     max-width: 1200px;
   }
   
   .section-title {
+    /* stylelint-disable-line */
     @apply mb-12 font-bold;
     font-size: 3.5rem;
     line-height: 1.1;
@@ -411,7 +426,7 @@
   margin: 0;
   padding-right: 50px;
   font-size: 0.9rem;
-  color: var(--human-gray);
+  color: var(--alephant-gray);
   font-weight: 500;
   letter-spacing: 0.5px;
 }

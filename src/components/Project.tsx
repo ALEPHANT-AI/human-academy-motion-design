@@ -43,31 +43,36 @@ const Project: React.FC = () => {
       number: "01",
       title: "Mapa do DNA de Founder",
       description: "Documento detalhando os elementos inegociáveis que sustentam seu negócio autêntico, alinhado ao seu propósito e valores essenciais.",
-      image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=800&q=80"
+      image: "https://i.imgur.com/2j0qtUk.png",
+      alt: "Silhueta de perfil contra fundo futurista com hélice de ADN digital roxa e fluxo de dados"
     },
     {
       number: "02",
       title: "Toolkit de IA Estratégica",
       description: "Conjunto de prompts, ferramentas e fluxos para acelerar seu negócio com IA para texto, imagem e vídeo, permitindo automação de alto nível.",
-      image: "https://images.unsplash.com/photo-1677442135136-760302221434?auto=format&fit=crop&w=800&q=80"
+      image: "https://i.imgur.com/DjXy15N.png",
+      alt: "Pessoa interagindo com interface holográfica complexa com dados e visualizações cerebrais"
     },
     {
       number: "03",
       title: "Prototype de Negócio do Futuro",
       description: "Modelo prático de como estruturar seu negócio para as próximas ondas de mercado, combinando seu DNA único com tendências emergentes.",
-      image: "https://images.unsplash.com/photo-1655720828018-7acde5002312?auto=format&fit=crop&w=800&q=80"
+      image: "https://i.imgur.com/0a5Zrmo.png",
+      alt: "Perfil com pontos luminosos projetados na pele, contra fundo com luzes verticais roxas/azuis"
     },
     {
       number: "04",
       title: "Plano Estratégico Minimalista",
       description: "Framework para decisões de alto impacto alinhadas ao seu DNA, eliminando desperdícios e focando apenas no que realmente importa.",
-      image: "https://images.unsplash.com/photo-1664575599618-8f6bd76fc670?auto=format&fit=crop&w=800&q=80"
+      image: "https://i.imgur.com/UPL9qI6.png",
+      alt: "Silhueta em corredor moderno minimalista com iluminação roxa e chão refletor"
     },
     {
       number: "05",
       title: "Acesso a Rede de Elite",
       description: "Conexões com fundadores que estão operando na fronteira da inovação consciente, criando oportunidades de networking estratégico de alto nível.",
-      image: "https://images.unsplash.com/photo-1557425955-df376b5903c8?auto=format&fit=crop&w=800&q=80"
+      image: "https://i.imgur.com/ck2gkBx.png",
+      alt: "Silhuetas de duas pessoas frente a frente numa mesa, com ecrã de rede/dados azul/roxo ao fundo"
     }
   ];
   
@@ -106,7 +111,7 @@ const Project: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-[rgba(189,16,166,0.2)] to-transparent z-5"></div>
                     <img 
                       src={item.image} 
-                      alt={item.title}
+                      alt={item.alt || item.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>

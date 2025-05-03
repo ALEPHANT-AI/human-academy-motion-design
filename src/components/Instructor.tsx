@@ -39,7 +39,8 @@ const Instructor: React.FC = () => {
       title: "O Líder do Futuro Ancestral",
       description: "Indígena do povo Puri (que o governo brasileiro chegou a considerar \"extinto\"). Especialista em IA Estratégica, utilizando ferramentas de inteligência artificial como uma extensão do pensamento humano. Cofundador da Alephant, forma líderes que criam movimentos e não apenas empresas.",
       quote: "Não uso IA como um software comum; vejo-a como uma conselheira que amplifica nossas raízes e potencializa nossos resultados.",
-      image: "https://images.unsplash.com/photo-1627161684458-a62da52b51c3?auto=format&fit=crop&w=800&q=80",
+      image: "https://imgur.com/sTB5wYK.png",
+      alt: "Foto de Taynã Puri, cofundador da ALEPHANT",
       expertise: [
         "Especialista em IA Estratégica",
         "Formador de Líderes e Movimentos",
@@ -52,7 +53,8 @@ const Instructor: React.FC = () => {
       title: "Renascido para Transformar Empresas",
       description: "Arquiteto de inovação para grandes multinacionais, viveu uma experiência de quase morte durante uma crise de saúde. Retornou decidido a conduzir negócios com propósito claro e crescimento sustentável. Cofundador da Alephant, desenvolve metodologias que transferem o DNA do fundador para toda a empresa.",
       quote: "Velocidade sem direção é apenas pressa para chegar ao fim. A verdadeira expansão vem quando unimos propósito sólido a execução de alto nível.",
-      image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=800&q=80",
+      image: "https://imgur.com/o6nvMN3.png",
+      alt: "Foto de Rodrigo Faerman, cofundador da ALEPHANT",
       expertise: [
         "Arquiteto de Inovação Empresarial",
         "Desenvolvedor da Metodologia DNA",
@@ -82,7 +84,7 @@ const Instructor: React.FC = () => {
                     <div className="relative rounded-lg overflow-hidden aspect-[4/5] cosmic-border">
                       <img 
                         src={founder.image} 
-                        alt={founder.name} 
+                        alt={founder.alt || founder.name} 
                         className="w-full h-full object-cover"
                       />
                     </div>
