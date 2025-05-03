@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface FAQItemProps {
@@ -17,13 +16,13 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
       >
         <h3 className="text-lg font-medium">{question}</h3>
         <div className={`relative ml-2 flex-shrink-0 w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>
-          <span className="absolute top-1/2 left-0 w-full h-0.5 bg-human-orange transform -translate-y-1/2"></span>
-          <span className={`absolute top-0 left-1/2 w-0.5 h-full bg-human-orange transform -translate-x-1/2 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-100'}`}></span>
+          <span className="absolute top-1/2 left-0 w-full h-0.5 bg-[var(--luminous-magenta)] transform -translate-y-1/2"></span>
+          <span className={`absolute top-0 left-1/2 w-0.5 h-full bg-[var(--luminous-magenta)] transform -translate-x-1/2 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-100'}`}></span>
         </div>
       </button>
       
       <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-5' : 'max-h-0'}`}>
-        <p className="text-human-gray">{answer}</p>
+        <p className="text-[var(--human-gray)]">{answer}</p>
       </div>
     </div>
   );
@@ -69,39 +68,39 @@ const FAQ: React.FC = () => {
   
   const faqs = [
     {
-      question: "É necessário ter conhecimentos prévios?",
-      answer: "Sim, é recomendado ter conhecimentos básicos de HTML, CSS e JavaScript. Não é necessário conhecer GSAP previamente, mas entender os fundamentos de desenvolvimento web ajudará a aproveitar melhor o conteúdo."
+      question: "Preciso ter conhecimento prévio em IA?",
+      answer: "Não. Começamos do zero e avançamos para níveis estratégicos, independente do seu conhecimento atual. O evento foi desenhado para ser acessível tanto para iniciantes quanto para quem já trabalha com IA."
     },
     {
-      question: "O que preciso levar para o workshop?",
-      answer: "Você deve trazer seu próprio notebook com os programas necessários já instalados. Enviaremos uma lista de preparação uma semana antes do evento com todas as ferramentas e configurações necessárias."
+      question: "Meu negócio já precisa estar funcionando?",
+      answer: "Não. O FOUNDER UPGRADE™ serve tanto para quem está estruturando algo novo quanto para quem deseja reposicionar um negócio existente. A metodologia se adapta a diferentes estágios da jornada empreendedora."
     },
     {
-      question: "Haverá gravação das aulas?",
-      answer: "Sim, todas as sessões serão gravadas e os participantes terão acesso às gravações por 12 meses após o evento, permitindo que você revise o conteúdo sempre que precisar."
+      question: "O que acontece depois do evento?",
+      answer: "Você sai com um plano prático de implementação. Se quiser aprofundar, oferecemos a Mentoria Fundação™ de 6 meses, que é uma continuação natural para quem deseja ir além e implementar tudo que foi aprendido com acompanhamento."
     },
     {
-      question: "O certificado é reconhecido pelo mercado?",
-      answer: "Sim, o certificado é valorizado pelo mercado por ser um workshop ministrado por profissionais reconhecidos na área de motion design e desenvolvimento front-end."
+      question: "Posso abater o valor do ingresso na mentoria?",
+      answer: "Sim. O valor é convertido em crédito integral se você decidir continuar conosco na Mentoria Fundação™ após o evento. Esta é uma forma de garantir que seu investimento inicial seja totalmente aproveitado caso decida dar o próximo passo."
     },
     {
-      question: "Posso pagar em parcelas?",
-      answer: "Sim, oferecemos parcelamento em até 12x no cartão de crédito. Também aceitamos pagamento via PIX ou transferência bancária para pagamento à vista com desconto adicional."
+      question: "Qual é a diferença entre este evento e outros cursos de IA?",
+      answer: "Não ensinamos apenas ferramentas, mas a integração estratégica entre seu DNA único, visão de futuro e tecnologias emergentes. Combinamos a precisão tecnológica com uma abordagem profundamente humana e estratégica para negócios."
     },
     {
       question: "Existe política de cancelamento?",
-      answer: "Sim, você pode solicitar reembolso integral até 15 dias antes do evento. Entre 14 e 7 dias antes, o reembolso será de 50%. Menos de 7 dias, não haverá reembolso, mas você pode transferir sua vaga para outra pessoa."
+      answer: "Sim, você pode solicitar reembolso integral até 15 dias antes do evento. Entre 14 e 7 dias antes, o reembolso será de 50%. Com menos de 7 dias de antecedência, não haverá reembolso, mas você pode transferir sua vaga para outra pessoa."
     }
   ];
   
   return (
-    <section ref={sectionRef} id="faq" className="py-24 bg-black/20">
+    <section ref={sectionRef} id="faq" className="py-24 bg-[rgba(5,5,16,0.7)]">
       <div className="container max-w-3xl">
         <h2 className="section-title text-center fade-item">
           Perguntas <span className="gradient-text">Frequentes</span>
         </h2>
         
-        <div className="mt-12 fade-item">
+        <div className="mt-12 fade-item cosmic-border p-8">
           {faqs.map((faq, index) => (
             <FAQItem 
               key={index}
@@ -113,12 +112,18 @@ const FAQ: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center fade-item">
-          <p className="mb-6 text-lg text-human-gray">
-            Ainda tem dúvidas? Entre em contato conosco.
+        <div className="text-center mt-12 fade-item">
+          <p className="mb-6 text-[var(--human-gray)]">
+            Ainda tem dúvidas? Entre em contato diretamente conosco
           </p>
-          <a href="mailto:contato@humanacademy.com.br" className="btn-secondary">
-            contato@humanacademy.com.br
+          <a 
+            href="mailto:contato@alephant.ai" 
+            className="inline-flex items-center text-[var(--luminous-magenta)] hover:text-[var(--transcendental-blue)] transition-colors"
+          >
+            <span>contato@alephant.ai</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </a>
         </div>
       </div>

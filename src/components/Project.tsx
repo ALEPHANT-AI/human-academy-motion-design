@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -39,54 +38,75 @@ const Project: React.FC = () => {
     };
   }, []);
   
-  const projectSteps = [
+  const deliverables = [
     {
       number: "01",
-      title: "Landing Page Imersiva",
-      description: "Construção de uma landing page completa utilizando técnicas de scroll animation, parallax e efeitos de reveal.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+      title: "Mapa do DNA de Founder",
+      description: "Documento detalhando os elementos inegociáveis que sustentam seu negócio autêntico, alinhado ao seu propósito e valores essenciais.",
+      image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=800&q=80"
     },
     {
       number: "02",
-      title: "Portfólio Interativo",
-      description: "Desenvolvimento de um portfólio com transições entre projetos, cursor personalizado e animações de hover.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+      title: "Toolkit de IA Estratégica",
+      description: "Conjunto de prompts, ferramentas e fluxos para acelerar seu negócio com IA para texto, imagem e vídeo, permitindo automação de alto nível.",
+      image: "https://images.unsplash.com/photo-1677442135136-760302221434?auto=format&fit=crop&w=800&q=80"
     },
     {
       number: "03",
-      title: "Experiência Narrativa",
-      description: "Criação de uma experiência de storytelling visual usando técnicas de pin scrolling e sequências animadas.",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=800&q=80"
+      title: "Prototype de Negócio do Futuro",
+      description: "Modelo prático de como estruturar seu negócio para as próximas ondas de mercado, combinando seu DNA único com tendências emergentes.",
+      image: "https://images.unsplash.com/photo-1655720828018-7acde5002312?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      number: "04",
+      title: "Plano Estratégico Minimalista",
+      description: "Framework para decisões de alto impacto alinhadas ao seu DNA, eliminando desperdícios e focando apenas no que realmente importa.",
+      image: "https://images.unsplash.com/photo-1664575599618-8f6bd76fc670?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      number: "05",
+      title: "Acesso a Rede de Elite",
+      description: "Conexões com fundadores que estão operando na fronteira da inovação consciente, criando oportunidades de networking estratégico de alto nível.",
+      image: "https://images.unsplash.com/photo-1557425955-df376b5903c8?auto=format&fit=crop&w=800&q=80"
     }
   ];
   
   return (
-    <section ref={sectionRef} id="project" className="py-24 bg-[#0F0F19]">
+    <section ref={sectionRef} id="results" className="py-24 bg-gradient-to-b from-[#0F0F19] to-[#0d0d1a]">
       <div className="container">
         <h2 className="section-title text-center fade-item text-[42px] md:text-[56px] leading-tight mb-4">
-          Projetos <span className="gradient-text">Completos</span>
+          O Que Você <span className="gradient-text">Leva</span>
         </h2>
         <p className="section-subtitle text-center mx-auto fade-item max-w-3xl">
-          Durante o workshop, você desenvolverá projetos do zero até deployments
-          completos, prontos para seu portfólio profissional
+          Ao final do FOUNDER UPGRADE™, você sai com ferramentas práticas e 
+          estratégicas para implementação imediata no seu negócio
         </p>
         
-        <div className="space-y-24 mt-24">
-          {projectSteps.map((step, index) => (
+        <div className="space-y-16 mt-16">
+          {deliverables.map((item, index) => (
             <div key={index} className="project-card">
-              <div className={`grid md:grid-cols-2 gap-8 items-center bg-[#111122]/40 rounded-2xl overflow-hidden backdrop-blur-sm ${index % 2 !== 0 ? 'md:grid-flow-dense' : ''}`}>
-                <div className={`p-8 md:p-10 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
-                  <span className="text-6xl font-black text-human-orange/20">{step.number}</span>
-                  <h3 className="text-2xl md:text-3xl font-bold mt-2 mb-4">{step.title}</h3>
-                  <p className="text-human-gray">{step.description}</p>
+              <div className={`grid md:grid-cols-2 gap-8 items-center cosmic-border backdrop-blur-sm ${index % 2 !== 0 ? 'md:grid-flow-dense' : ''}`}>
+                <div className={`p-8 md:p-10 ${index % 2 !== 0 ? 'md:order-1' : ''}`}>
+                  <div className="flex items-center">
+                    <span className="text-5xl font-bold mr-4" style={{
+                      background: "linear-gradient(135deg, var(--luminous-magenta) 0%, var(--transcendental-blue) 100%)",
+                      WebkitBackgroundClip: "text",
+                      backgroundClip: "text",
+                      color: "transparent",
+                      opacity: 0.8
+                    }}>{item.number}</span>
+                    <h3 className="text-2xl md:text-3xl font-bold">{item.title}</h3>
+                  </div>
+                  <p className="mt-4 text-[var(--human-gray)] leading-relaxed">{item.description}</p>
                 </div>
                 
-                <div className={`${index % 2 !== 0 ? 'md:order-2' : 'md:order-1'}`}>
-                  <div className="relative group overflow-hidden h-full">
-                    <div className="absolute inset-0 bg-gradient-to-t from-human-dark via-transparent to-transparent z-10"></div>
+                <div className={`${index % 2 !== 0 ? 'md:order-2' : ''}`}>
+                  <div className="relative group overflow-hidden aspect-video">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,5,16,0.8)] via-transparent to-transparent z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[rgba(189,16,166,0.2)] to-transparent z-5"></div>
                     <img 
-                      src={step.image} 
-                      alt={step.title}
+                      src={item.image} 
+                      alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
@@ -94,6 +114,13 @@ const Project: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <p className="text-xl mb-8 text-[var(--human-gray)]">
+            <strong className="text-[var(--luminous-magenta)]">Bônus:</strong> Se optar pela mentoria de 6 meses, o valor investido na imersão <strong>será integralmente convertido em crédito</strong>
+          </p>
+          <a href="#register" className="cta-button inline-block">Quero Garantir Esses Resultados</a>
         </div>
       </div>
     </section>
