@@ -301,24 +301,140 @@
   text-align:center;
 }
 
+.main-tagline {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
 .main-title {
-  font-size:6rem;
-  font-weight:900;
-  letter-spacing:-0.03em;
-  margin-bottom:30px;
-  background:linear-gradient(135deg,#fff 0%,#c7c7c7 100%);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  line-height:1.1;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg,#fff 0%,#c7c7c7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg,#6b46e5 0%,#b144e3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+}
+
+.hero-emphasis {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+  background: rgba(0,0,0,0.2);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid rgba(107,70,229,0.5);
+}
+
+.emphasis-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.emphasis-text, 
+.emphasis-callout, 
+.emphasis-description, 
+.emphasis-closing {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #f0f0f0;
+}
+
+.emphasis-callout {
+  font-size: 1.3rem;
+  color: #a3a3ff;
+  text-align: center;
+}
+
+.emphasis-benefits {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.emphasis-benefits li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.4;
+  color: #f0f0f0;
+}
+
+.emphasis-benefits li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #6b46e5;
+}
+
+.hero-cta-block {
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+.cta-note {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.6;
+  color: #fff;
 }
 
 .hero-paragraph {
-  font-size:1.4rem;
-  line-height:1.5;
-  max-width:600px;
-  margin:0 auto;
-  color:#f5f5f5;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #f5f5f5;
+}
+
+.hero-quote {
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 650px;
+  margin: 20px auto 30px;
+  color: #a3a3ff;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero-quote::before,
+.hero-quote::after {
+  content: '"';
+  font-size: 2rem;
+  position: absolute;
+  color: rgba(107,70,229,0.5);
+}
+
+.hero-quote::before {
+  top: -15px;
+  left: 0;
+}
+
+.hero-quote::after {
+  bottom: -25px;
+  right: 0;
 }
 
 .hero-buttons {
@@ -417,12 +533,45 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
+  .main-tagline {
+    font-size: 1.2rem;
+  }
+  
   .main-title {
-    font-size: 4rem;
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+  
+  .hero-emphasis {
+    padding: 1.5rem;
+  }
+  
+  .emphasis-title {
+    font-size: 1.3rem;
+  }
+  
+  .emphasis-text, 
+  .emphasis-callout, 
+  .emphasis-description, 
+  .emphasis-closing,
+  .emphasis-benefits li {
+    font-size: 1rem;
+  }
+  
+  .cta-note {
+    font-size: 1rem;
   }
   
   .hero-paragraph {
     font-size: 1.1rem;
+  }
+  
+  .hero-quote {
+    font-size: 1rem;
+    padding: 0 15px;
   }
   
   .hero-section {
