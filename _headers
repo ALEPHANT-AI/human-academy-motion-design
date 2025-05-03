@@ -1,0 +1,4 @@
+*.js    application/javascript
+*.mjs   application/javascript
+*.js.map application/json
+*.css   text/css
