@@ -1,4 +1,6 @@
-*.js    application/javascript
-*.mjs   application/javascript
-*.js.map application/json
-*.css   text/css
+/*.js
+  Content-Type: application/javascript
+/*.css
+  Content-Type: text/css
+/*.json
+  Content-Type: application/json
