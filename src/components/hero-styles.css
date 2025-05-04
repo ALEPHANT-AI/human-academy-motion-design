@@ -22,8 +22,8 @@
 }
 
 .hero-symbol img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 
@@ -31,12 +31,15 @@
   font-size: 3.75rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--luminous-magenta) 0%, var(--transcendental-blue) 100%);
+  background: linear-gradient(135deg, #BD10A6 0%, #2A65E8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: 1.5rem;
-  line-height: 1;
+  line-height: 1.1;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 .main-title {

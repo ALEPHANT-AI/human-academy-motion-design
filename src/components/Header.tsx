@@ -40,9 +40,10 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="text-2xl font-bold text-white tracking-tight flex items-center">
-              <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="h-8 mr-2" />
+              <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="h-10 w-auto mr-3" />
+              <span className="text-white text-xl">ALEPHANT</span>
             </a>
-            <span className="text-sm text-[var(--alephant-gray)] ml-4">10-12 Julho 2025</span>
+            <span className="text-sm text-[var(--alephant-gray)] ml-4">07-08 Julho 2025</span>
           </div>
           
           <nav className="hidden md:block">
@@ -84,9 +85,9 @@ const Header: React.FC = () => {
           
           <div className="mt-12 text-center">
             <a href="#" className="text-xl font-bold text-white tracking-tight mb-2 block flex justify-center">
-              <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="h-8" />
+              <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="h-10 w-auto" />
             </a>
-            <span className="text-[var(--alephant-gray)]">10-12 Julho 2025</span>
+            <span className="mt-3 text-[var(--alephant-gray)]">07-08 Julho 2025</span>
           </div>
         </div>
       </div>

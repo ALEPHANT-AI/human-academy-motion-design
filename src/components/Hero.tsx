@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
       <header className="site-header">
         <div className="header-inner">
           <div className="logo">
-            <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="w-8 h-8 object-contain mr-2" />
+            <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="w-10 h-10 object-contain mr-2" />
             <span>ALEPHANT</span>
           </div>
           <div className="event-info">
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
             <div className="hero-symbol">
               <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="object-contain" />
             </div>
-            <h2 className="main-tagline">FOUNDER UPGRADE™</h2>
+            <h2 className="main-tagline">FOUNDER UPGRADE&trade;</h2>
             <h1 className="main-title">Empresas do futuro serão extensões precisas do seu fundador.</h1>
             
             <p className="hero-paragraph">
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           <div className="hero-meta">
             <div className="hero-meta-item">
               <div className="meta-label">Quando</div>
-              <div className="meta-value">07—08 Julho 2025</div>
+              <div className="meta-value">07-08 Julho 2025</div>
             </div>
             <div className="hero-meta-item">
               <div className="meta-label">Onde</div>
