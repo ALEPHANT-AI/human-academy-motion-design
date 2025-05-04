@@ -31,9 +31,9 @@ const Program: React.FC = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top top",
-        end: "+=300%",
+        end: "+=200%",
         pin: true,
-        scrub: 0.5,
+        scrub: 0.3,
         anticipatePin: 1,
         markers: false,
       }
@@ -54,13 +54,13 @@ const Program: React.FC = () => {
       timeline.to(cards[index - 1], {
         autoAlpha: 0,
         yPercent: -30,
-        duration: 1
+        duration: 0.5
       }, index);
       
       timeline.to(card, {
         autoAlpha: 1,
         yPercent: 0,
-        duration: 1
+        duration: 0.5
       }, index);
     });
     
@@ -118,7 +118,7 @@ const Program: React.FC = () => {
               key={index}
               className="program-card absolute top-0 left-0 w-full"
             >
-              <div className="grid md:grid-cols-2 gap-8 items-center bg-[#111122]/40 rounded-2xl overflow-hidden backdrop-blur-sm">
+              <div className="grid md:grid-cols-2 gap-8 items-center bg-[#111122] rounded-2xl overflow-hidden shadow-lg border border-purple-900/20">
                 <div className="p-8 md:p-10">
                   <div className="flex items-center mb-6">
                     <span className="text-5xl font-bold text-purple-500/30 mr-4">{item.number}</span>
@@ -138,7 +138,6 @@ const Program: React.FC = () => {
                 </div>
                 
                 <div className="relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-tl from-[rgba(5,5,16,0.7)] via-transparent to-transparent z-10"></div>
                   <img 
                     src={item.image} 
                     alt={item.alt || item.title}
