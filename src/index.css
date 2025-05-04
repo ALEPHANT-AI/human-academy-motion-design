@@ -232,15 +232,15 @@
 }
 
 .hero-symbol {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--luminous-magenta);
-  opacity: 0.9;
+  opacity: 0.7;
   margin-bottom: 1rem;
 }
 
 .main-tagline {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 1rem;
   background: var(--essence-gradient);
@@ -251,7 +251,7 @@
 }
 
 .main-title {
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(2rem, 5vw, 3.8rem);
   font-weight: 900;
   letter-spacing: -0.03em;
   margin-bottom: 30px;
@@ -260,14 +260,18 @@
   background-clip: text;
   color: transparent;
   line-height: 1.1;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-paragraph {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   line-height: 1.5;
   max-width: 600px;
   margin: 0 auto 2rem;
-  color: var(--radiant-white);
+  color: var(--alephant-gray);
+  font-weight: 400;
 }
 
 .hero-buttons {
@@ -281,18 +285,18 @@
 .cta-button {
   background: linear-gradient(135deg, var(--luminous-magenta), var(--transcendental-blue));
   color: var(--radiant-white);
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 16px 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px 36px;
   border-radius: 30px;
-  box-shadow: 0 10px 25px rgba(189, 16, 166, 0.3);
+  box-shadow: 0 8px 20px rgba(189, 16, 166, 0.2);
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(189, 16, 166, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(189, 16, 166, 0.3);
 }
 
 .lot-info {

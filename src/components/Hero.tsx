@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import './hero-styles.css';
 
 const Hero: React.FC = () => {
   const tickerRef = useRef<HTMLDivElement>(null);
@@ -29,7 +30,8 @@ const Hero: React.FC = () => {
       <header className="site-header">
         <div className="header-inner">
           <div className="logo">
-            <span className="logo-icon"></span>ALEPHANT
+            <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="w-8 h-8 object-contain mr-2" />
+            <span>ALEPHANT</span>
           </div>
           <div className="event-info">
             <span className="event-date">07-08 Julho • Florianópolis</span>
@@ -57,8 +59,10 @@ const Hero: React.FC = () => {
         
         <div className="container">
           <div className="hero-content">
-            <div className="hero-symbol">א</div>
-            <div className="main-tagline">FOUNDER UPGRADE™</div>
+            <div className="hero-symbol">
+              <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="object-contain" />
+            </div>
+            <h2 className="main-tagline">FOUNDER UPGRADE™</h2>
             <h1 className="main-title">Empresas do futuro serão extensões precisas do seu fundador.</h1>
             
             <p className="hero-paragraph">

@@ -1,9 +1,9 @@
-
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import VideoSection from '../components/VideoSection';
 import Benefits from '../components/Benefits';
 import Program from '../components/Program';
 import Project from '../components/Project';
@@ -91,6 +91,7 @@ const Index = () => {
         <CustomCursor />
         <Header />
         <Hero />
+        <VideoSection />
         <Benefits />
         <Program />
         <Project />

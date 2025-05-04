@@ -2,13 +2,13 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/images/alephant-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#050510" />
     <meta name="description" content="FOUNDER UPGRADE™ - Atualize sua mente. Atualize seus negócios. Construa o futuro." />
     <meta property="og:title" content="FOUNDER UPGRADE™ by ALEPHANT" />
     <meta property="og:description" content="Atualize sua mente. Atualize seus negócios. Construa o futuro. Imersão presencial 07-08 de Julho em Florianópolis." />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="/assets/images/alephant-logo.png" />
     <meta property="og:url" content="https://founder-upgrade.alephant.ai" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -52,8 +52,11 @@
       
       .loader {
         position: relative;
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       
       .loader:before {
@@ -68,15 +71,11 @@
         animation: pulse 1.5s ease-out infinite;
       }
       
-      .loader:after {
-        content: 'א';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        font-weight: bold;
-        color: #FAFAFF;
+      .loader img {
+        position: relative;
+        width: 60px;
+        height: auto;
+        z-index: 2;
       }
       
       @keyframes pulse {
@@ -98,7 +97,9 @@
   <body>
     <!-- Preloader -->
     <div class="preloader">
-      <div class="loader"></div>
+      <div class="loader">
+        <img src="/assets/images/alephant-logo.png" alt="ALEPHANT Logo">
+      </div>
     </div>
     
     <div id="root"></div>
