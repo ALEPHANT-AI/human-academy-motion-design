@@ -30,8 +30,7 @@ const Hero: React.FC = () => {
       <header className="site-header">
         <div className="header-inner">
           <div className="logo">
-            <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="w-10 h-10 object-contain mr-2" />
-            <span>ALEPHANT</span>
+            <img src="/assets/images/alephant-logo.png" alt="ALEPHANT" className="h-11 w-auto" />
           </div>
           <div className="event-info">
             <span className="event-date">07-08 Julho • Florianópolis</span>

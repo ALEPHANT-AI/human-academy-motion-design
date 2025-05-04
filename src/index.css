@@ -129,6 +129,12 @@
   letter-spacing: -0.01em;
 }
 
+.logo img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
 .logo-icon {
   width: 16px;
   height: 16px;
